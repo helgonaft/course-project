@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+  @Output() showSection = new EventEmitter<string>();
+
+  onMenuClick = function(view: string) {
+    this.showSection.emit(view);
+  };
 }
