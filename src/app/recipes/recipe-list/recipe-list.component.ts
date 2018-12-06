@@ -13,16 +13,12 @@ export class RecipeListComponent implements OnInit {
   // Recipe[] - array of Recipe objects
   recipes: Recipe[];
   // pass data to parent - recipes component:
-  @Output() selectedRecipe = new EventEmitter<Recipe>();
+  // @Output() selectedRecipe = new EventEmitter<Recipe>();
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
-  }
-
-  onRecipeSelected(recipe: Recipe) {
-    this.selectedRecipe.emit(recipe);
   }
 
 }
